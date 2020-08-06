@@ -1,13 +1,25 @@
-<template>
-  <h3>分类</h3>
+ <template>
+  <div>
+    <scroll class="content">
+      
+    </scroll>
+  </div>
 </template>
 
 <script>
+import Scroll from "../../components/common/scroll/Scroll"
 export default {
-  name: "Category"
+  name: "Category",
+  components: {
+    Scroll
+  }
 }
 </script>
 
-<style>
-
-</style>
+<style scoped>
+  .content {
+    height: 300px;
+    background-color: red;
+    overflow: hidden;
+  }
+</style> 
