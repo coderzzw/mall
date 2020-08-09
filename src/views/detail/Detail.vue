@@ -62,7 +62,7 @@ export default {
     this.iid = this.$route.params.iid  
     // 2.根据iid请求详情数据
     getDetail(this.iid).then(res => {
-      console.log(res);
+     // console.log(res);
       const data = res.result;
       // 2.1保存获取的顶部轮播图数据
       this.topImages = res.result.itemInfo.topImages
@@ -92,14 +92,14 @@ export default {
   methods: {
     detailImageLoad() {
       this.$refs.scroll.refresh()
-      console.log(111);
+    
       
       //this.themeTopYs = [];
       this.themeTopYs.push(0); 
       this.themeTopYs.push(this.$refs.params.$el.offsetTop); 
       this.themeTopYs.push(this.$refs.comment.$el.offsetTop); 
       this.themeTopYs.push(this.$refs.recommend.$el.offsetTop); 
-      console.log(this.themeTopYs);
+      //console.log(this.themeTopYs);
       
     },
     titleClick(index) {
@@ -117,16 +117,18 @@ export default {
     },
     addToCart() {
     // 1.获取商品在购物车中所要展示信息
-     /*  const product = {};
+      const product = {};
+      //console.log(this.goods);
       product.image = this.topImages[0];
-      product.title = this.itemInfo.title;
-      product.desc = this.goodsInfo.desc;
-      product.price = this.goodsInfo.newPrice;
-      product.iid = this.iid */
-      console.log('监听到了');
+      product.title = this.goods.title;
+      product.desc = this.goods.desc;
+      product.price = this.goods.oldPrice;
+      product.iid = this.iid
+     // console.log(product);
       
     // 2.将商品添加到购物车
-    
+      this.$store.commit('addCart', product)
+
     }
   }
 }

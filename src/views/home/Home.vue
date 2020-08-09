@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="wrapper">
-    <nav-bar class="home-nav"><div slot="center">杰尼商城</div></nav-bar>
+    <nav-bar class="home-nav"><div slot="center">SuperShop</div></nav-bar>
     
     <scroll class="content" ref="scroll" :probe-type="3" @scroll="contentScroll">
       <swiper>
@@ -141,6 +141,7 @@
     right: 0;
     top: 0;
     z-index: 99;
+    
   }
 
   .content {
